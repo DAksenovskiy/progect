@@ -449,10 +449,12 @@ class Favourites extends State<SetStateDemoSaveResult>{
                    textAlign: TextAlign.center,
                  )
              ),
+             SizedBox(height: 10),
              StoreConnector<int, int>(
                converter: (store) => store.state,
                builder: (context, state) => Text(state.toString()),
-             )
+             ),
+             SizedBox(height: 10),
            ]
          ),
     );

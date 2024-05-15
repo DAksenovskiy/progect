@@ -23,6 +23,7 @@ import 'newton_method.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
 import 'comparison_of_results.dart';
+import 'mach_e.dart';
 
 class MyApp extends StatelessWidget{
   @override
@@ -62,6 +63,7 @@ class MyApp extends StatelessWidget{
         '/horizontal_asymptote': (context) => const SetStateDemoHorizontal_Asymptote(),
         '/factorials': (context) => const SetStateDemoFactorials(),
         '/the_babylonian_method': (context) => const SetStateDemoThe_Babylonian_method(),
+        '/mache': (context) => const SetStateDemoMach_E(),
         '/newton_method': (context) => const SetStateDemoNewton_method(),
         '/navigation': (context) => const Register(),
         '/login': (context) => const Login(),

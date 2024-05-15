@@ -4,6 +4,8 @@ import 'generated/l10n.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:redux/redux.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 
 class WelcomePage extends StatelessWidget{
   String email, password;
@@ -11,7 +13,9 @@ class WelcomePage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
+    final Store<int> store = StoreProvider.of<int>(context);
     return Scaffold(
+
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: AppBar(
         title: Text(S.of(context).main_page),
@@ -63,6 +67,12 @@ class WelcomePage extends StatelessWidget{
                     foregroundColor: Colors.white,
                   )
               ),
+            SizedBox(height: 10),
+            StoreConnector<int, int>(
+              converter: (store) => store.state,
+              builder: (context, state) => Text(state.toString()),
+            ),
+            SizedBox(height: 10),
             SizedBox(height: 10),
               ElevatedButton(
                   onPressed: () => {

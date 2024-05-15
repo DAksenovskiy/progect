@@ -43,7 +43,18 @@ class HomeE extends StatelessWidget{
                     foregroundColor: Colors.white,
                   )
               ),
-
+              SizedBox(height: 20),
+              ElevatedButton(
+                  onPressed: () => {
+                    Navigator.pushNamed(context, '/mache')
+                  },
+                  child: new Text('Mach E'),
+                  style: ElevatedButton.styleFrom(
+                    textStyle: TextStyle(fontSize: 20),
+                    backgroundColor: Colors.black26,
+                    foregroundColor: Colors.white,
+                  )
+              ),
               SizedBox(height: 100),
               ElevatedButton(
                   onPressed: () => {

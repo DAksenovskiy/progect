@@ -1,11 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled1/mach_piBlock.dart';
 import 'generated/l10n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import "dart:math" show pi;
 import "dart:math" show e;
 import 'dart:math';
 import 'PdfPreviewPage.dart';
+
+
+
 
 class SetStateComparison extends StatefulWidget {
   String result1;
@@ -22,8 +26,8 @@ class SetStateComparison extends StatefulWidget {
   State<SetStateComparison> createState() => Comparison(result1: result1, result2: result2,
       constant1: constant1, constant2: constant2,
       iter_time1: iter_time1, iter_time2: iter_time2);
-
 }
+
 
 class Helper {
   static String valueSharedPreferences = '';
@@ -56,8 +60,17 @@ class Comparison extends State<SetStateComparison>{
   String accur1 = '0';
   String accur2 = '0';
 
+
   Comparison({required this.result1, required this.result2, required this.constant1, required this.constant2, required this.iter_time1, required this.iter_time2});
 
+  Mach_piBlock _block = Mach_piBlock();
+
+  void dispose() {
+    // Закрытие потоков
+    _block.dispoce();
+    super.dispose();
+  }
+  
  void _accurconstant1(){
    if (constant1 == 'e')
    {
@@ -105,6 +118,7 @@ class Comparison extends State<SetStateComparison>{
     }
 
   }
+
 
   @override
   Widget build(BuildContext context){

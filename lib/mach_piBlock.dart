@@ -9,7 +9,8 @@ import 'save_rezults.dart';
 import 'my_catalog.dart';
 
 enum Mach_piEvent{ //Список ивентов
-  calculatemachpi
+  calculatemachpi,
+  calculatemache
 }
 
 class Mach_piBlock{
@@ -26,6 +27,12 @@ class Mach_piBlock{
        _i = pi;
        _outputStateController.sink.add(_i);
      }
+   if (event == Mach_piEvent.calculatemache)
+   { // Описание ивента
+     const double e = 2.718281828459045;
+     _i = e;
+     _outputStateController.sink.add(_i);
+   }
  }
  Mach_piBlock(){
    _inputEventController.stream.listen(_calculate); // конструктор который запускает метод calculate при прохождении данных через поток
